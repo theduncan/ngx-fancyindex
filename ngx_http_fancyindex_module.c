@@ -1005,7 +1005,7 @@ make_content_buf(
         }
 
         ngx_gmtime(entry[i].mtime + tp->gmtoff * 60 * alcf->localtime, &tm);
-        b->last = ngx_cpymem_ssz(b->last, "</td><td>");
+        b->last = ngx_cpymem_ssz(b->last, "</td><td class='utc_datetime'>");
         b->last = ngx_fancyindex_timefmt(b->last, &alcf->time_format, &tm);
         b->last = ngx_cpymem_ssz(b->last, "</td></tr>");
 
